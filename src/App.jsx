@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import "./App.css"
 
+import announce from './assets/announce'
 
 import EditorPanel from './components/EditorPanel'
 import PreviewPanel from './components/PreviewPanel'
@@ -11,7 +12,7 @@ class App extends Component {
     super(props)
 
     this.state = {
-      passage: '# Marked in Node.js\n\nRendered by **marked**.',
+      passage: announce,
       isLoading: true
     }
   }
