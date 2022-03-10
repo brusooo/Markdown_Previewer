@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=Comforter&family=Mochiy+Pop+P+One&family=Quintessential&display=swap");
+
+$white: #fff;
+$green: #55fa09;
+$pink : #f80759;
+
+$boxWidth: 550px;
+
+$darkAccent: #224b4b;
+
+@mixin flexDisplay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin blueBg {
+  background: #000428;
+  background: linear-gradient(to left, #000428, #004e92);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  overflow-x: hidden;
+  user-select: none;
+}
+
+body {
+  @include flexDisplay();
+  @include blueBg();
+  min-height: 100vh;
+  cursor: url("./assets/cursor.png"), auto;
+  overflow-y: scroll;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  @include blueBg();
+  @include flexDisplay();
+
+  & span {
+    position: relative;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: $pink;
+    margin: 10px;
+    animation: load 1s ease forwards infinite;
+    transition: 0.5s;
+
+    &:nth-child(1) {
+      animation-duration: 1.2s;
+    }
+
+    &:nth-child(2) {
+      animation-duration: 1.6s;
+    }
+
+    &:nth-child(3) {
+      animation-duration: 2s;
+    }
+
+    @keyframes load {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+  }
+}
+
+
+.title {
+  position: relative;
+  top: -3px;
+  text-align: center;
+
+  & h1 {
+    color: $white;
+    font-size: 3.5rem;
+    letter-spacing: 1.7px;
+    font-family: "Comforter", cursive;
+  }
+}
+
+.view {
+  display: flex;
+}
+
+.editIt,
+.previewIt {
+  position: relative;
+  top: -10px;
+  display: flex;
+  flex-direction: column;
+  margin: 12px 30px;
+}
+
+
+.top {
+  position: relative;
+  display: flex;
+  width: $boxWidth;
+  height: 30px;
+  background: #333;
+  transition: 0.2s;
+  font-family: "Comforter", cursive;
+
+  & .edit {
+    position: relative;
+    top: 2px;
+    left: 10px;
+    color: $green;
+    transform: scale(0.8);
+  }
+
+  & h2 {
+    position: relative;
+    top: 2px;
+    left: 17px;
+    font-size: 1.31rem;
+    letter-spacing: 2px;
+    color: $white;
+  }
+
+  & .max {
+    position: absolute;
+    top: 2px;
+    right: 8px;
+    transform: scale(0.8);
+    color: $green;
+  }
+}
+
+.editorView {
+  position: relative;
+  width: $boxWidth;
+  height: 550px;
+  resize: none;
+  border: none;
+  outline: none;
+  padding: 25px 20px;
+  transition: 0.2s;
+  font-size: 15px;
+}
+
+.preview {
+  @extend.editorView;
+  background: $white;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 8px 20px;
+
+
+  blockquote {
+    border-left: 3px solid #224b4b;
+    color: #224b4b;
+    padding-left: 5px;
+    margin-left: 25px;
+    margin: 10px 0;
+  }
+
+  > p > code {
+    padding: 3px;
+    margin: 10px 0;
+  }
+
+  code {
+    background: #eee;
+    font-size: 0.875rem;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+
+  pre {
+    display: block;
+    overflow: auto;
+    background: #eee;
+    padding: 15px;
+    line-height: 1.2;
+    margin: 10px 0;
+  }
+
+  h1 {
+    border-bottom: 2px solid $darkAccent;
+  }
+
+  h2 {
+    border-bottom: 1px solid $darkAccent;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  img,
+  table {
+    padding: 2px;
+    margin: 7px 0;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  td,
+  th {
+    border: 2px solid $darkAccent;
+    padding: 7px;
+  }
+
+  img {
+    display: block;
+    max-width: 90%;
+    margin: 2rem auto;
+  }
+
+  ul,
+  ol {
+    padding-left: 20px;
+    margin: 3px 0;
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  opacity: 0.5;
+  & h3 {
+    color: $white;
+    font-family: "Comforter", cursive;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  .title {
+    top: 8px;
+    margin: 20px;
+    & h1 {
+      font-size: 2.5em;
+    }
+  }
+
+  .view {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .title {
+    top: 20px;
+    & h1 {
+      font-size: 2.2rem;
+    }
+  }
+
+  .view {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .editIt,
+  .previewIt {
+      transform: scale(0.75);
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+
+  .editIt,
+  .previewIt {
+      transform: scale(0.55 , 0.75) ;
+  }
+}
+
+
+@media screen and (max-width: 350px) {
+  .editIt,
+  .previewIt {
+      transform: scale(0.47 , 0.75);
+  }
+}

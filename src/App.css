@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css2?family=Comforter&family=Mochiy+Pop+P+One&family=Quintessential&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  overflow-x: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #000428;
+  background: -webkit-gradient(linear, right top, left top, from(#000428), to(#004e92));
+  background: linear-gradient(to left, #000428, #004e92);
+  min-height: 100vh;
+  cursor: url("./assets/cursor.png"), auto;
+  overflow-y: scroll;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000428;
+  background: -webkit-gradient(linear, right top, left top, from(#000428), to(#004e92));
+  background: linear-gradient(to left, #000428, #004e92);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loader span {
+  position: relative;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background: #f80759;
+  margin: 10px;
+  -webkit-animation: load 1s ease forwards infinite;
+          animation: load 1s ease forwards infinite;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.loader span:nth-child(1) {
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+}
+
+.loader span:nth-child(2) {
+  -webkit-animation-duration: 1.6s;
+          animation-duration: 1.6s;
+}
+
+.loader span:nth-child(3) {
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+@-webkit-keyframes load {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}
+
+@keyframes load {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+}
+
+.title {
+  position: relative;
+  top: -3px;
+  text-align: center;
+}
+
+.title h1 {
+  color: #fff;
+  font-size: 3.5rem;
+  letter-spacing: 1.7px;
+  font-family: "Comforter", cursive;
+}
+
+.view {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.editIt,
+.previewIt {
+  position: relative;
+  top: -10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 12px 30px;
+}
+
+.top {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 550px;
+  height: 30px;
+  background: #333;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-family: "Comforter", cursive;
+}
+
+.top .edit {
+  position: relative;
+  top: 2px;
+  left: 10px;
+  color: #55fa09;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.top h2 {
+  position: relative;
+  top: 2px;
+  left: 17px;
+  font-size: 1.31rem;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.top .max {
+  position: absolute;
+  top: 2px;
+  right: 8px;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  color: #55fa09;
+}
+
+.editorView, .preview {
+  position: relative;
+  width: 550px;
+  height: 550px;
+  resize: none;
+  border: none;
+  outline: none;
+  padding: 25px 20px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  font-size: 15px;
+}
+
+.preview {
+  background: #fff;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 8px 20px;
+}
+
+.preview blockquote {
+  border-left: 3px solid #224b4b;
+  color: #224b4b;
+  padding-left: 5px;
+  margin-left: 25px;
+  margin: 10px 0;
+}
+
+.preview > p > code {
+  padding: 3px;
+  margin: 10px 0;
+}
+
+.preview code {
+  background: #eee;
+  font-size: 0.875rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.preview pre {
+  display: block;
+  overflow: auto;
+  background: #eee;
+  padding: 15px;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+
+.preview h1 {
+  border-bottom: 2px solid #224b4b;
+}
+
+.preview h2 {
+  border-bottom: 1px solid #224b4b;
+}
+
+.preview h1,
+.preview h2,
+.preview h3,
+.preview h4,
+.preview h5,
+.preview h6,
+.preview img,
+.preview table {
+  padding: 2px;
+  margin: 7px 0;
+}
+
+.preview table {
+  border-collapse: collapse;
+}
+
+.preview td,
+.preview th {
+  border: 2px solid #224b4b;
+  padding: 7px;
+}
+
+.preview img {
+  display: block;
+  max-width: 90%;
+  margin: 2rem auto;
+}
+
+.preview ul,
+.preview ol {
+  padding-left: 20px;
+  margin: 3px 0;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  opacity: 0.5;
+}
+
+.footer h3 {
+  color: #fff;
+  font-family: "Comforter", cursive;
+}
+
+@media screen and (max-width: 1030px) {
+  .title {
+    top: 8px;
+    margin: 20px;
+  }
+  .title h1 {
+    font-size: 2.5em;
+  }
+  .view {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .title {
+    top: 20px;
+  }
+  .title h1 {
+    font-size: 2.2rem;
+  }
+  .view {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .editIt,
+  .previewIt {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .editIt,
+  .previewIt {
+    -webkit-transform: scale(0.55, 0.75);
+            transform: scale(0.55, 0.75);
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .editIt,
+  .previewIt {
+    -webkit-transform: scale(0.47, 0.75);
+            transform: scale(0.47, 0.75);
+  }
+}
+/*# sourceMappingURL=App.css.map */
